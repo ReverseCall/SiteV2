@@ -24,3 +24,10 @@ h2{
     margin-top: 10px;
     margin-bottom:20px;
 }
+.dica {
+    background-color: green;
+}
+
+.informacao {
+    background-color: blue;
+}
