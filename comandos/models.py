@@ -13,3 +13,9 @@ class Mensagem(models.Model):
     def __str__(self):
         return self.conteudo
     
+class Imagem(models.Model):
+    nome = models.CharField(max_length=100, unique=True)
+    imagem = models.ImageField(upload_to='imagens/')
+    
+    def __str__(self):
+        return self.nome

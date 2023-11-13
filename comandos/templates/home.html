@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Sua Aplicação</title>
 </head>
@@ -44,6 +45,49 @@
     {% else %}
         <p>Nenhuma mensagem foi enviada ainda.</p>
     {% endif %}
+
+    <label for="meuInput">Digite algo:</label>
+    <input type="text" id="meuInput">
+
+    <div id="imagemContainer">
+        <h4 id="mensagemNaoEncontrado" style="display: none;">Nada encontrado</h4>
+        <img id="minhaImagem" src="" alt="" width="500px" style="display: none;">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#meuInput').on('input', function() {
+                var nomeDigitado = $(this).val().toLowerCase();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "exibir_imagem" %}',
+                    data: {'nome': nomeDigitado, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                    success: function(data) {
+                        var imagemUrl = data.imagem_url;
+
+                        if (nomeDigitado) {
+                            // Se o texto do input não estiver vazio
+                            if (imagemUrl) {
+                                // Exibe a imagem e oculta a mensagem
+                                $('#minhaImagem').attr('src', imagemUrl).show();
+                                $('#mensagemNaoEncontrado').hide();
+                            } else {
+                                // Exibe a mensagem e oculta a imagem
+                                $('#minhaImagem').hide();
+                                $('#mensagemNaoEncontrado').show();
+                            }
+                        } else {
+                            // Se o texto do input estiver vazio, oculta ambos
+                            $('#minhaImagem').hide();
+                            $('#mensagemNaoEncontrado').hide();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 </div>
 </body>
 </html>

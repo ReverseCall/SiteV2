@@ -3,5 +3,6 @@ from .models import *
 # Register your models here.
 
 admin.site.register(Mensagem)
+admin.site.register(Imagem)
 
 # diferente
