@@ -151,6 +151,9 @@ p{
         .conteine{
             padding-bottom: 50px;
         }
+        input{
+            width: 300px;
+        }
     }
     
 }
