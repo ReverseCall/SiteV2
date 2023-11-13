@@ -55,16 +55,20 @@
     {% endif %}
 </div>
 <div class="dividir2">
-
-
-    <label for="meuInput">Digite algo:</label>
-    <input type="text" id="meuInput">
-
-    <div id="imagemContainer">
-        <h4 id="mensagemNaoEncontrado" style="display: none;">Nada encontrado</h4>
-        <img id="minhaImagem" src="" alt="">
+    <div class="testo">
+        <h3>Digite algo:</h3>
     </div>
-
+    <div class="pesquisa">
+        <input type="text" id="meuInput">
+        <h4 id="mensagemNaoEncontrado" style="display: none;">Nada encontrado</h4>
+    </div>
+    <div class="imagem">
+        <div id="imagemContainer">
+            <img id="minhaImagem" src="" alt="">
+        </div>
+    </div>
+</div>
+</div>
     <script>
         $(document).ready(function() {
             $('#meuInput').on('input', function() {
@@ -99,7 +103,6 @@
         });
     </script>
 
-</div>
-</div>
+
 </body>
 </html>

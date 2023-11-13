@@ -12,7 +12,7 @@
     align-items: center;
     margin-top: 20px;
     height: 500px;
-   width: 100%;
+    width: 100%;
 }
 h1{
     margin: 10px 0px 30px 0px;
@@ -38,29 +38,51 @@ h2{
 }
 .conteine{
     background-color: rgb(119, 145, 180);
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
-    margin-top: 20px;
-    min-height: 610px;
+    margin-top: 15px;
     width: 100%;
+    height: auto;
+    padding-bottom: 5px;
 }
 .dividir1{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: rgba(28, 28, 163, 0.116);
     width: 600px;
     margin-bottom: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px 20px;
 }
 .dividir2{
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    background-color: rgb(26, 26, 131);
+    align-items: center;
     width: 600px;
     height: 600px;
     margin-top: 10px;
+    border-radius: 3px;
+}
+h3{
+    font-size: 30px;
+    color: white;
+}
+h4{
+    color: white;
+}
+input{
+    width: 500px;
+}
+.imagem{
+    margin-top: 30px;
 }
 h1{
     margin: 10px 0px 30px 0px;
@@ -73,37 +95,62 @@ h2{
     margin-bottom:20px;
 }
 .dica {
-    background-color: green;
+    background-color: rgba(5, 77, 5, 0.753);
+    border-radius: 2px;
+    border-bottom: solid 2px rgb(7, 61, 25);
+    color: wheat;
 }
 
 .informacao {
-    background-color: blue;
+    background-color: rgb(23, 23, 128);
+    border-radius: 2px;
+    border-bottom: solid 2px rgb(8, 8, 66);
+    color: wheat;
 }
 #minhaImagem{
     max-width: 500px;
 }
-
 li{
     margin: 10px 10px;
     min-height: 40px;
-    min-inline-size: 40px;
     list-style: none;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 p{
     min-height: 40px;
     min-inline-size: 40px;
     margin: 0px 10px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1199px)
+{   
+    .conteine{
+        padding-bottom: 20px;
+    }
 
-    .dividir1{
-        width: 350px;
+    @media (max-width: 680px) {
+
+        .dividir1{
+            width: 350px;
+        }
+        .dividir2{
+            width: 350px;
+        }
+        #minhaImagem{
+            max-width: 300px;
+        }
+        .conteine{
+            padding-bottom: 50px;
+        }
     }
-    .dividir2{
-        width: 350px;
-    }
-    #minhaImagem{
-        max-width: 300px;
-    }
+    
 }
