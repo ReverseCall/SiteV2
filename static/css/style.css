@@ -30,4 +30,69 @@ h2{
 
 .informacao {
     background-color: blue;
+}*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.conteine{
+    background-color: rgb(119, 145, 180);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 20px;
+    min-height: 610px;
+    width: 100%;
+}
+.dividir1{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 600px;
+    margin-bottom: 50px;
+}
+.dividir2{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    width: 600px;
+    height: 600px;
+    margin-top: 10px;
+}
+h1{
+    margin: 10px 0px 30px 0px;
+}
+#mensagem{
+    margin-bottom: 10px;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom:20px;
+}
+.dica {
+    background-color: green;
+}
+
+.informacao {
+    background-color: blue;
+}
+#minhaImagem{
+    max-width: 500px;
+}
+
+
+@media (max-width: 600px) {
+}
+li{
+    margin: 10px 10px;
+    height: 40px;
+    line-height: 40px;
+}
+p{
+    height: 40px;
+    line-height: 40px;
+    margin: 0px 10px;
 }

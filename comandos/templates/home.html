@@ -9,7 +9,10 @@
     <title>Sua Aplicação</title>
 </head>
 <body>
+    
     <div class="conteine">
+        <div class="dividir1">
+
     <h1>Mensagem Atual</h1>
     
     {% if mensagem_recente %}
@@ -25,7 +28,7 @@
                 </audio>
             {% endif %}
         {% else %}
-     <div class="{% if mensagem_recente.tipo_mensagem == 'dica' %}dica{% elif mensagem_recente.tipo_mensagem == 'informacao' %}informacao{% endif %}"> 
+     <div class="{% if mensagem_recente.tipo_mensagem == 'dica' %}dica{% elif mensagem_recente.tipo_mensagem == 'informacao' %}informacao{% endif %}">
             <p>{{ mensagem_recente.conteudo }} - Enviada em {{ mensagem_recente.dia_envio }} às {{ mensagem_recente.horario_envio }}</p>
      </div>
         {% endif %}
@@ -33,29 +36,33 @@
         <p id="mensagem">Ainda e cedo quegueiro, volte e descançe um pouco mais.</p>
     {% endif %}
 
-    <hr>
-
     <h2>Histórico de Mensagens</h2>
-    
+
     {% if historico_mensagens %}
         <ul>
             {% for mensagem in historico_mensagens %}
-                <li>{{ mensagem.conteudo }} - Enviada em {{ mensagem.dia_envio }} às {{ mensagem.horario_envio }}</li>
-                {% if mensagem.ultima and mensagem.mensagem_adicional %}
-                    <li>Mensagem Adicional: {{ mensagem.mensagem_adicional }}</li>
-                {% endif %}
+                <div class="{% if mensagem.tipo_mensagem == 'dica' %}dica{% elif mensagem.tipo_mensagem == 'informacao' %}informacao{% endif %}">
+                    <li>{{ mensagem.conteudo }} - Enviada em {{ mensagem.dia_envio }} às {{ mensagem.horario_envio }}</li>
+                    
+                    {% if mensagem.ultima and mensagem.mensagem_adicional %}
+                        <li>Mensagem Adicional: {{ mensagem.mensagem_adicional }}</li>
+                    {% endif %}
+                </div>
             {% endfor %}
         </ul>
     {% else %}
         <p>Nenhuma mensagem foi enviada ainda.</p>
     {% endif %}
+</div>
+<div class="dividir2">
+
 
     <label for="meuInput">Digite algo:</label>
     <input type="text" id="meuInput">
 
     <div id="imagemContainer">
         <h4 id="mensagemNaoEncontrado" style="display: none;">Nada encontrado</h4>
-        <img id="minhaImagem" src="" alt="" width="500px" style="display: none;">
+        <img id="minhaImagem" src="" alt="">
     </div>
 
     <script>
@@ -92,6 +99,7 @@
         });
     </script>
 
+</div>
 </div>
 </body>
 </html>
