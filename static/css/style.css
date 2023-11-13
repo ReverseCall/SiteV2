@@ -85,21 +85,23 @@ h2{
 
 li{
     margin: 10px 10px;
-    height: 40px;
-    line-height: 40px;
+    min-height: 40px;
+    min-inline-size: 40px;
+    list-style: none;
 }
 p{
-    height: 40px;
-    line-height: 40px;
+    min-height: 40px;
+    min-inline-size: 40px;
     margin: 0px 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
+
     .dividir1{
-        width: 400px;
+        width: 350px;
     }
     .dividir2{
-        width: 400px;
+        width: 350px;
     }
     #minhaImagem{
         max-width: 300px;
