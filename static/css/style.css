@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.conteine{
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 500px;
+   width: 100%;
+}
+h1{
+    margin: 10px 0px 30px 0px;
+}
+#mensagem{
+    margin-bottom: 10px;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom:20px;
+}

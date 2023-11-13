@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Sua Aplicação</title>
+</head>
+<body>
+    <div class="conteine">
+    <h1>Mensagem Atual</h1>
+    
+    {% if mensagem_recente %}
+        {% if mensagem_recente.ultima %}
+            <p>{{ mensagem_recente.conteudo }} - Enviada em {{ mensagem_recente.dia_envio }} às {{ mensagem_recente.horario_envio }}</p>
+            {% if mensagem_recente.mensagem_adicional %}
+                <p>Mensagem Adicional: {{ mensagem_recente.mensagem_adicional }}</p>
+                <audio controls autoplay>
+                    <source src="{{ mensagem_recente.audio_url.url }}" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            {% endif %}
+        {% else %}
+            <p>{{ mensagem_recente.conteudo }} - Enviada em {{ mensagem_recente.dia_envio }} às {{ mensagem_recente.horario_envio }}</p>
+        {% endif %}
+    {% else %}
+        <p id="mensagem">Ainda e cedo quegueiro, volte e descançe um pouco mais.</p>
+    {% endif %}
+
+    <hr>
+
+    <h2>Histórico de Mensagens</h2>
+    
+    {% if historico_mensagens %}
+        <ul>
+            {% for mensagem in historico_mensagens %}
+                <li>{{ mensagem.conteudo }} - Enviada em {{ mensagem.dia_envio }} às {{ mensagem.horario_envio }}</li>
+                {% if mensagem.ultima and mensagem.mensagem_adicional %}
+                    <li>Mensagem Adicional: {{ mensagem.mensagem_adicional }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma mensagem foi enviada ainda.</p>
+    {% endif %}
+</div>
+</body>
+</html>
