@@ -29,3 +29,4 @@ def exibir_imagem(request):
         imagem_url = None
     
     return JsonResponse({'imagem_url': imagem_url})
+

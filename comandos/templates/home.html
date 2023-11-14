@@ -17,7 +17,7 @@
     
     {% if mensagem_recente %}
         {% if mensagem_recente.ultima %}
-        </div class="{% if mensagem_recente.tipo_mensagem == 'dica' %}dica{% elif mensagem_recente.tipo_mensagem == 'informacao' %}informacao{% endif %}"> 
+        <div class="{% if mensagem_recente.tipo_mensagem == 'dica' %}dica{% elif mensagem_recente.tipo_mensagem == 'informacao' %}informacao{% endif %}"> 
             <p>{{ mensagem_recente.conteudo }} - Enviada em {{ mensagem_recente.dia_envio }} às {{ mensagem_recente.horario_envio }}</p>
         </div>
             {% if mensagem_recente.mensagem_adicional %}
@@ -101,6 +101,8 @@
                 });
             });
         });
+        
+        
     </script>
 
 
